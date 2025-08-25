@@ -1,0 +1,4 @@
+node_modules/electron/dist/electron.exe
+echo "node_modules/" >> .gitignore
+echo "dist/" >> .gitignore
+echo "*.exe" >> .gitignore

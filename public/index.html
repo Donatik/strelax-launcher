@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Strelax RP Launcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="launcher-container">
+        <div class="window-controls">
+            <div class="draggable-header"></div>
+            <button class="window-btn minimize-btn">
+                <i class="fas fa-window-minimize"></i>
+            </button>
+            <button class="window-btn close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">ST</div>
+                <h2>Strelax Launcher</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">🏠 Главная</a>
+                <a href="#shop" class="nav-link">🛒 Магазин</a>
+                <a href="#settings" class="nav-link">⚙️ Настройки</a>
+                <div class="external-links">
+                    <a href="https://news.strelax.ru" target="_blank">📰 Новости</a>
+                    <a href="https://forum.strelax.ru" target="_blank">💬 Форум</a>
+                    <a href="https://discord.gg/strelax" target="_blank">🎮 Discord</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <!-- Главная страница -->
+            <section id="home" class="content-section active">
+                <h2 class="section-title">Рекомендуемые сервера</h2>
+                <div class="games-grid">
+                    <div class="server-card">
+                        <div class="server-info">
+                            <div class="server-status">
+                                <span class="online-dot"></span>
+                                <span>Онлайн: 256</span>
+                            </div>
+                            <span class="ping-badge">Пинг: 34ms</span>
+                        </div>
+                        <h3 class="server-title">Strelax #1</h3>
+                        <p>Roleplay</p>
+                        <button class="play-button">▶ Играть</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Магазин -->
+            <section id="shop" class="content-section">
+                <h2 class="section-title">Магазин внутриигровых предметов</h2>
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <div class="item-icon premium"></div>
+                        <h3>Премиум аккаунт</h3>
+                        <p>Эксклюзивные возможности</p>
+                        <div class="item-footer">
+                            <span class="price">299₽</span>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-icon vehicle"></div>
+                        <h3>Премиум транспорт</h3>
+                        <p>Эксклюзивный автомобиль</p>
+                        <div class="item-footer">
+                            <span class="price">599₽</span>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Настройки -->
+            <section id="settings" class="content-section">
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="general">Основные</button>
+                    <button class="tab-btn" data-tab="advanced">Дополнительные</button>
+                </div>
+
+                <div id="general" class="tab-content active">
+                    <div class="setting-item">
+                        <label data-lang="language">Язык интерфейса</label>
+                        <select class="setting-select" id="languageSelect">
+                            <option value="ru">Русский</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label data-lang="autostart">Автозапуск лаунчера</label>
+                        <label class="switch">
+                            <input type="checkbox" id="autostart">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label data-lang="minimize">Сворачивать после запуска</label>
+                        <label class="switch">
+                            <input type="checkbox" id="minimizeOnLaunch">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="advanced" class="tab-content">
+                    <div class="path-input-group">
+                        <input type="text" class="path-input" id="gtaPath" 
+                            placeholder="Путь к GTA V Legacy" readonly>
+                        <button class="action-button" id="changeGtaPath">
+                            Сменить
+                        </button>
+                    </div>
+                    <div class="path-input-group">
+                        <input type="text" class="path-input" id="strelaxPath" 
+                            placeholder="Путь к Strelax RP" readonly>
+                        <button class="action-button" id="changeStrelaxPath">
+                            Сменить
+                        </button>
+                    </div>
+                    <div class="setting-item">
+                        <button class="action-button danger-button" id="clearCache">
+                            Очистить кэш
+                        </button>
+                        <button class="action-button danger-button" id="fixPermissions">
+                            Починить права
+                        </button>
+                        <button class="action-button" id="verifyFiles">
+                            Проверить файлы
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="notification-container" id="notificationContainer"></div>
+    </div>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="../src/app.js"></script>
+</body>
+</html>

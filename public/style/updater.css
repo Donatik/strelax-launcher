@@ -1,0 +1,64 @@
+:root {
+    --primary: #2196F3;
+    --background: #1A1A1A;
+}
+
+body {
+    background: var(--background);
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.updater-container {
+    text-align: center;
+    padding: 30px;
+    max-width: 400px;
+}
+
+.loader {
+    margin: 20px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.status-message {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.version-info {
+    color: #888;
+    font-size: 14px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
